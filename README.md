@@ -164,14 +164,11 @@ Als Rollen für den Note funktionieren
 
 ## Was kann das MIS?
 
-- **Mail System**: Send and receive mail messages.
-- **Bulletin Boards**: Post and view bulletins on various boards.
-- **Channel Directory**: Add and view channels in the directory.
-- **Statistics**: View statistics about nodes, hardware, and roles.
-- **Wall of Shame**: View devices with low battery levels.
-- **Fortune Teller**: Get a random fortune. Pulls from the fortunes.txt file. Feel free to edit this file remove or add more if you like.
+- **Mail System**: Senden und Empfangen von Nachrichten an Nodes.
+- **Bulletin Boards**: Eine Art Pinnwand für Informationen in form von Nachrichten.
+- **Channel Directory**: Ein Verzeichniss für Meshtastic Kanäle.
+- **Statistics**: Statistiken von Nodes, Hardware und Rollen.
+- **Wall of Shame**: Zeigt Geräte mit niedrigem Akkustand.
+- **Fortune Teller**: Zufällig generierte Wahrsage. Unnötig, aber kostet nichts.
 
-
-
-```sh
-```
+Weitere Informationen und Codeschnipsel folgen in kürze. Primär folgt jetzt die Übersetzung.
