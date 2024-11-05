@@ -25,19 +25,23 @@ Zuerst installieren wir [Meshtastic](https://meshtastic.org/docs/software/python
 ```sh 
 cd ~
 apt-get -y update && apt-get upgrade
-sudo apt-get -y install python3 python3-pip screen
+sudo apt-get -y install python3 python3-pip screen git
 sudo apt install -y pipx && pipx install meshtastic
 pipx ensurepath
 ```
+Nach der Installation muss die SSH Verbindung beendet und wiederverbunden werden!
 
-   
-   ```sh
-apt-get -y update && apt-get upgrade
-cd ~
+Meshtastic sollte jetzt schon verwendbar sein. Wenn ein Node z.B. per USB verbunden ist, sollte der folgende Befehl Informationen zum Node auslesen und anzeigen:
+
+```sh 
+meshtastic --info
+```
+Weiter geht es mit der Installation von MIS:
+
+```sh
 git clone https://github.com/Neppumuck/Meshtastic-Informations-System-MIS.git
 cd Meshtastic-Informations-System-MIS
-   ```
-
+```
 
 
 
