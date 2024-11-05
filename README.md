@@ -43,7 +43,29 @@ git clone https://github.com/Neppumuck/Meshtastic-Informations-System-MIS.git
 cd Meshtastic-Informations-System-MIS
 ```
 
+Wir erstellen ein Python virtual environment:
+```sh
+python3 -m venv venv
+```
+Damit virtual environment wird aktiviert:
+```sh
+source venv/bin/activate
+```
+Es fehlen noch ein paar Dinge:
+```sh
+pip install -r requirements.txt
+```
+Umbenennen der Konfgiuationsdatei:
+```sh
+mv example_config.ini config.ini
+```
 
 
+
+
+
+
+```sh
+```
 
 []()
