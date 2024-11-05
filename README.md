@@ -83,7 +83,7 @@ Für die, die das Zeichen nicht auf der Tastatur finden:
 ```sh
 ''
 ```
-Bearbeiten wir die config.ini z.B. mit nano oder nach belieben:
+Bearbeiten wir die "config.ini" z.B. mit nano oder nach belieben:
 ```sh
 nano config.ini
 ```
@@ -97,9 +97,81 @@ Auf die restlichen Einstellungen gehe ich hier nicht näher ein. Diese werden im
 ```sh
 python server.py
 ```
-Wenn alles geklappt hat, sollte das MIS starten und 
+Wenn alles geklappt hat, sollte das MIS starten und von Meshtastic Nodes ansprechbar sein.
+
+Tipp: Ich lasse den Server gerne mit [Screen](https://wiki.ubuntuusers.de/Screen/) im Hintergrund laufen.
+
+### Autostart
+
+Soll das MIS beim Start des Raspberry gestartet werden, muss folgedes umgesetzt werden:
+
+Die Datei "mesh-bbs.service" muss bearbeitet werden:
+```sh
+User=root 
+WorkingDirectory=/root/Meshtastic-Informations-System-MIS
+ExecStart=/root/Meshtastic-Informations-System-MIS/venv/bin/python3 /root/Meshtastic-Informations-System-MIS/server.py
+```
+oder z.B.
+```sh
+User=pi
+WorkingDirectory=/home/pi/Meshtastic-Informations-System-MIS
+ExecStart=/home/pi/Meshtastic-Informations-System-MIS/venv/bin/python3 /home/pi/Meshtastic-Informations-System-MIS/server.py
+```
+Es folgt das einrichten des Dienstes:
+```sh
+sudo cp mesh-bbs.service /etc/systemd/system/
+```
+Autostart aktivieren:
+```sh
+sudo systemctl enable mesh-bbs.service
+```
+Autostart deaktivieren:
+```sh
+sudo systemctl disable mesh-bbs.service
+```
+
+Start sofort:
+```sh
+sudo systemctl start mesh-bbs.service
+```
+Stop:
+```sh
+sudo systemctl stop mesh-bbs.service
+```
+Status:
+```sh
+sudo systemctl status mesh-bbs.service
+```
+Neustart:
+```sh
+sudo systemctl restart mesh-bbs.service
+```
+Vergangenes Logbucheinträge anzeigen:
+```sh
+journalctl -u mesh-bbs.service
+```
+Live Logbuch:
+```sh
+journalctl -u mesh-bbs.service -f
+```
+
+## Anmerkungen:
+
+Als Rollen für den Note funktionieren
+
+- **Client**
+- **Router_Client**
+
+## Was kann das MIS?
+
+- **Mail System**: Send and receive mail messages.
+- **Bulletin Boards**: Post and view bulletins on various boards.
+- **Channel Directory**: Add and view channels in the directory.
+- **Statistics**: View statistics about nodes, hardware, and roles.
+- **Wall of Shame**: View devices with low battery levels.
+- **Fortune Teller**: Get a random fortune. Pulls from the fortunes.txt file. Feel free to edit this file remove or add more if you like.
 
 
-[]()
+
 ```sh
 ```
